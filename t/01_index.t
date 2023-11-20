@@ -27,11 +27,11 @@ subtest 'node info' => sub{
       }
     }
 
-    subtest '37958' => sub{
+    subtest 'unitig 37958' => sub{
       is($seq{37958}{cigar}, 'KC:i:284', "attributes");
       is($link{37958}{to}, '2255152', "link to");
     };
-    subtest '2254218' => sub{
+    subtest 'unitig 2254218' => sub{
       is($seq{2254218}{cigar}, 'KC:i:645456', "attributes");
       is($link{2254218}{to}, '2235416', "link to");
     };
