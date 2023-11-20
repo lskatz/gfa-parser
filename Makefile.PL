@@ -15,10 +15,10 @@ my $preop = 'true';
 
 WriteMakefile1(
   NAME         => 'template',
-  VERSION_FROM => 'scripts/template.pl',
+  VERSION_FROM => 'scripts/gfa-info.pl',
   AUTHOR => q{Lee S. Katz <gzu2@cdc.gov>},
   EXE_FILES    => [
-    "scripts/template.pl",
+    "scripts/gfa-info.pl",
   ],
   PREREQ_PM    => {
     # Core modules
@@ -42,8 +42,8 @@ WriteMakefile1(
     resources => {
       repository => {
         type => 'git',
-        url => 'git://github.com/lskatz/template.git',
-        web => 'https://github.com/lskatz/template',
+        url => 'git://github.com/lskatz/gfa-parser.git',
+        web => 'https://github.com/lskatz/gfa-parser',
       },
     },
   },

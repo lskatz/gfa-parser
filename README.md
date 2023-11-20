@@ -1,29 +1,35 @@
-# template-perl
-A simple template for perl projects
+# GFA Parser
 
-# Usage
+A simple perl parser for GFA format.
+There are many other tools much better than this tool listed at <https://github.com/GFA-spec/GFA-spec>.
 
-Click the button at the top of GitHub that says `Use this template` and then edit away
+## Usage
 
-# Contents
+```text
+gfa-info.pl: gives stats on a Graphical Fragment Assembly (GFA) file
+  Usage: gfa-info.pl [options] assembly.gfa
+  --node   Focus on one node
+  --help   This useful help menu
+```
 
-`Makefile.pl` - Running this file with `perl Makefile.PL` creates an actual `Makefile` with certain usages such as
+## example
 
-* `make`
-* `make test`
-* `make install`
-* `make manifest`
-* `make dist`
+In this example, I used `cut -c` for brevity
+due to the lengths of unitigs.
 
-## scripts
+```text
+$ perl scripts/gfa-info.pl t/data/test.gfa --node 37958 --node 2254218 | cut -c 1-60
+S       37958   cigar   KC:i:284
+S       37958   seq     TGGGCCAGTTGGTGATTTTGAACTTTTGCTTTGCCACGGAACGGTCTG
+L       37958   overlap 111M
+L       37958   to      2255152
+L       37958   toOrient        +
+L       37958   fromOrient      +
+S       2254218 cigar   KC:i:645456
+S       2254218 seq     CGGTGGTAATAAAGCGAAGAAATTCGGTGGAGCGGTAGTTCAGTCG
+L       2254218 toOrient        +
+L       2254218 fromOrient      -
+L       2254218 overlap 111M
+L       2254218 to      2235416
 
-`template.pl` A single script that has basic modules and usage. Rename this file to what suits you.
-You can add more scripts here.
-
-## t
-
-`01_index.t` A single perl script that has a unit test in it. Rename `_index` to what your usage would be.
-You can add additional tests in this folder. There is a two digit number here in the script name(s) so that
-the scripts will be run in the correct order even though the system will sort alphabetically instead
-of numerically.
-
+```
